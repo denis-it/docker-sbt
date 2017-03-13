@@ -13,12 +13,13 @@ ENV SBT_JAR      https://repo.typesafe.com/typesafe/ivy-releases/org.scala-sbt/s
 ADD  $SBT_JAR  /usr/local/bin/sbt-launch.jar  
 COPY sbt.sh    /usr/local/bin/sbt
 
-RUN echo "==> fetch all sbt jars from Maven repo..."       && \
+RUN apt-get update && \
+    echo "==> fetch all sbt jars from Maven repo..."       && \
     echo "==> [CAUTION] this may take several minutes!!!"  && \
     sbt
 
 VOLUME [ "/app" ]
 WORKDIR /app
 
-ENTRYPOINT ["sbt"]
+ENTRYPOINT ["/bin/bash"]
 CMD []
