@@ -7,7 +7,7 @@
 FROM williamyeh/java8
 MAINTAINER Denis T. <dev@denis-it.com>
 
-ENV SBT_VERSION  0.13.13
+ENV SBT_VERSION  0.13.16
 ENV SBT_JAR      https://repo.typesafe.com/typesafe/ivy-releases/org.scala-sbt/sbt-launch/$SBT_VERSION/sbt-launch.jar
 
 ADD  $SBT_JAR  /usr/local/bin/sbt-launch.jar
